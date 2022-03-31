@@ -30,3 +30,4 @@ The "sec" version prevents this with some simple conversion methods.
 But that is why it can be more disadvantageous from a security point of view...
 The User does not see the token directly in script (must be converted).
 
+(gitscript-allin full version, which also allows you to create a plain or hidden token)
