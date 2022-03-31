@@ -21,5 +21,5 @@ use examples:
 
 ./gitscript.sh repoexample.git
 ./gitscript.sh USERNAME repoexample.git
-./gitscript.sh https:// github.com/USERNAME/repoexample.git
+./gitscript.sh https://github.com/USERNAME/repoexample.git
 ==========================================================
