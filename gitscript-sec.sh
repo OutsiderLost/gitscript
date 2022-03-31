@@ -10,13 +10,13 @@ if [ "$autochange" = "1" ]; then
   echo " " # (echo igrored)
   read -p "" varname1
   echo " " # (echo igrored)
-  [ -f gitscript* ] && sed -i "29s/HTOKEN=.*/HTOKEN='$varname1'/g" gitscript* || sed -i "29s/HTOKEN=.*/HTOKEN='$varname1'/g" /usr/bin/gitscript*
+  [ -f gitscript* ] && sed -i "30s/secTOKEN=.*/secTOKEN='"$(echo -n "$varname1" | xxd -p | tr -d '\n' | base64 | tr -d '\n')"'/g" gitscript* || sed -i "30s/secTOKEN=.*/secTOKEN='"$(echo -n "$varname1" | xxd -p | tr -d '\n' | base64 | tr -d '\n')"'/g" /usr/bin/gitscript*
   echo "(no change username -> press: ctrl + c)" # (echo igrored)
   echo "Add your USERNAME:"
   echo " " # (echo igrored)
   read -p "" varname2
   echo " " # (echo igrored)
-  [ -f gitscript* ] && sed -i "30s/USERNAME=.*/USERNAME='$varname2'/g" gitscript* || sed -i "29s/HTOKEN=.*/HTOKEN='$varname1'/g" /usr/bin/gitscript*
+  [ -f gitscript* ] && sed -i "33s/USERNAME=.*/USERNAME='$varname2'/g" gitscript* || sed -i "33s/USERNAME=.*/USERNAME='$varname2'/g" /usr/bin/gitscript*
   sleep 1
   echo "change value -> TOKEN='$varname1'"
   echo "change value -> USERNAME='$varname2'"
@@ -25,8 +25,11 @@ else
 echo -n ""
 fi
 
-# add your username & token value ---
-HTOKEN='ghp_HtTpSt0kEn'
+### YOUR USERNAME & TOKEN VALUE ###
+## secTOKEN value -> echo -n 'ghp_HtTpSt0kEn' | xxd -p | tr -d '\n' | base64 | tr -d '\n'
+secTOKEN= # 'hex=&=base64'
+# HTOKEN='ghp_HtTpSt0kEn'
+HTOKEN="$(echo -n "$secTOKEN" | base64 -d | xxd -r -p)"
 USERNAME='MyUsername'
 
 # 0 -> empty input | -h, --help, $lenght <-> $lenght
@@ -36,6 +39,7 @@ USERNAME='MyUsername'
 # input minimum text length ----
 lenght=4
 
+### INPUT TEXT VALUE CHECK ###
 # value2c="$(echo "$varONE$varTWO" | sed '/^.\{8\}/!d;/^[[:space:]]*$/d;s/[ ]//g' | wc -l)"
 value1a2="$(echo -e "$(echo "$varONE" | sed "/^.\{$lenght,\}$/d")\n$(echo "$varTWO" | sed "/^.\{$lenght,\}$/d")" | sed '/^[[:space:]]*$/d;s/[ ]//g' | wc -l)"
 value0="$(echo -e "$varONE\n""$varTWO" | sed -e '/^[[:space:]]*$/d;s/[ ]//g' | wc -l)"
