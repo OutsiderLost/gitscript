@@ -8,8 +8,8 @@ cd gitscript
 chmod +x *.sh
 
 (add your username & token)
-nano gitscript.sh
-mv gitscript.sh /usr/bin/gitscript
+nano gitscript-sec.sh
+mv gitscript-sec.sh /usr/bin/gitscript
 
 (or autochange your username & token)
 gitscript -c # or --change
@@ -23,3 +23,9 @@ use examples:
 ./gitscript.sh USERNAME repoexample.git
 ./gitscript.sh https://github.com/USERNAME/repoexample.git
 ==========================================================
+(gitscript-sec version advantages and disadvantages)
+
+If token value travels online (during some transmission) github can disable and new one must be created.
+The "sec" version prevents this with some simple conversion methods.
+But that is why it can be more disadvantageous from a security point of view...
+The User does not see the token directly in script (must be converted).
