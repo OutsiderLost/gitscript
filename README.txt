@@ -29,4 +29,3 @@ If token value travels online (during some transmission) github can disable and 
 The "sec" version prevents this with some simple conversion methods.
 But that is why it can be more disadvantageous from a security point of view...
 The User does not see the token directly in script (must be converted).
-==========================================================
