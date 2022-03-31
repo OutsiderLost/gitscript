@@ -7,11 +7,11 @@ git clone https://github.com/OutsiderLost/gitscript.git
 cd gitscript
 chmod +x *.sh
 
-(add your username & token)
-nano gitscript-sec.sh
-mv gitscript-sec.sh /usr/bin/gitscript
+(add manual your username & token value)
+nano gitscript.sh
+mv gitscript-allin.sh /usr/bin/gitscript
 
-(or autochange your username & token)
+(or autochange your username & token value)
 gitscript -c # or --change
 ==========================================================
 (usage)
@@ -28,7 +28,7 @@ use examples:
 If token value travels online (during some transmission) github can disable and new one must be created.
 The "sec" version prevents this with some simple conversion methods.
 But that is why it can be more disadvantageous from a security point of view...
-The User does not see the token directly in script (must be converted).
+The User does not see the token value directly in script (must be converted).
 
-(gitscript-allin full version, which also allows you to create a plain or hidden token)
+(gitscript-allin full version -> which also allows you to create a plain or hidden token value)
 
