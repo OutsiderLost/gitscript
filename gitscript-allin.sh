@@ -50,7 +50,7 @@ USERNAME='MyUsername'
 # 0 -> empty input | -h, --help, $lenght <-> $lenght
 # 1 -> repo name
 # 2 -> repo & user name
-# input minimum text length ----
+## input minimum text length ----
 lenght=4
 # value2c="$(echo "$varONE$varTWO" | sed '/^.\{8\}/!d;/^[[:space:]]*$/d;s/[ ]//g' | wc -l)"
 value1a2="$(echo -e "$(echo "$varONE" | sed "/^.\{$lenght,\}$/d")\n$(echo "$varTWO" | sed "/^.\{$lenght,\}$/d")" | sed '/^[[:space:]]*$/d;s/[ ]//g' | wc -l)"
