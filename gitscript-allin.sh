@@ -46,11 +46,10 @@ HTOKEN='ghp_HtTpSt0kEn'
 ### YOUR USERNAME ###
 USERNAME='MyUsername'
 
+### INPUT TEXT VALUE CHECK ###
 # 0 -> empty input | -h, --help, $lenght <-> $lenght
 # 1 -> repo name
 # 2 -> repo & user name
-
-### INPUT TEXT VALUE CHECK ###
 # input minimum text length ----
 lenght=4
 # value2c="$(echo "$varONE$varTWO" | sed '/^.\{8\}/!d;/^[[:space:]]*$/d;s/[ ]//g' | wc -l)"
