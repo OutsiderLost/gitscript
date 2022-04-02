@@ -34,4 +34,5 @@ But that is why it can be more disadvantageous from a security point of view...
 The User does not see the token value directly in script (must be converted).
 
 (gitscript-allin full version -> which also allows you to create a plain or hidden token value)
+(deafult install)
 
