@@ -8,6 +8,7 @@ cd gitscript
 chmod +x *.sh
 ./install.sh
 cd ~/
+
 (or, manual procedures)
 (add manual your username & token value)
 nano gitscript.sh
