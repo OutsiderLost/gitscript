@@ -6,7 +6,9 @@ github automatization downloader with https-token. Possible input: username and/
 git clone https://github.com/OutsiderLost/gitscript.git
 cd gitscript
 chmod +x *.sh
-
+./install.sh
+cd ~/
+(or, manual procedures)
 (add manual your username & token value)
 nano gitscript.sh
 mv gitscript-allin.sh /usr/bin/gitscript
