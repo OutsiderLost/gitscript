@@ -65,7 +65,7 @@ if [ "$value2" = "2" ]; then
   echo "2. value input -> $varTWO"
   USERNAME="$varONE"
   REPONAME="$varTWO"
-  git clone 'https://'$HTOKEN'@github.com/'$USERNAME'/'$REPONAME || echo "(TOKEN not found, use: -c or --change) !!!"
+  git clone 'https://'$HTOKEN'@github.com/'$USERNAME'/'$REPONAME || echo "(something error, or TOKEN not found, use: -c or --change) !!!"
 else
 ### ONE VALUE CHECK ###
 value3="$(echo "$varONE" | sed '/https:\/\/github\.com\//!d' | wc -l)"
@@ -73,12 +73,12 @@ if [ "$value3" = "1" ]; then
   echo "(value is link -> https...)"
   ### IN ALL COPIED LINK ###
   GITLINK="$(echo "$varONE" | sed 's/https:\/\///g')"
-  git clone 'https://'$HTOKEN'@'$GITLINK || echo "(TOKEN not found, use: -c or --change) !!!"
+  git clone 'https://'$HTOKEN'@'$GITLINK || echo "(something error, or TOKEN not found, use: -c or --change) !!!"
 else
   #### SIMPLE REPO INPUT ###
   echo "(simple repo input...)"
   REPONAME="$varONE"
-  git clone 'https://'$HTOKEN'@github.com/'$USERNAME'/'$REPONAME || echo "(USERNAME or TOKEN not found, use: -c or --change) !!!"
+  git clone 'https://'$HTOKEN'@github.com/'$USERNAME'/'$REPONAME || echo "(something error, or USERNAME or TOKEN not found, use: -c or --change) !!!"
 fi
   echo "(one value input process end)"
 fi
