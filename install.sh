@@ -32,6 +32,7 @@ if [ "$?" = '0' ]; then
   cd /root/
   echo " "
   echo "Success! removed folder, exit the place -> cd /root/"
+  sleep 3 && exit
 else
   echo 'error, there is something wrong...!!!'
   echo " "
