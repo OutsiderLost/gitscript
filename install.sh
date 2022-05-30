@@ -32,11 +32,16 @@ if [ "$?" = '0' ]; then
   cd /root/
   echo " "
   echo "Success! removed folder, exit the place -> cd /root/"
-  sleep 3 && exit
+  echo " "
+  echo "(wait 8 sec and close ALL terminal, OR PREVENT -> Ctrl + c !!!)"
+  echo " "
+  sleep 8
+  kill "$(pidof -x qterminal)"
+  exit
 else
   echo 'error, there is something wrong...!!!'
   echo " "
   echo "(exit...)"
   echo " "
-  exit 
+  exit
 fi
